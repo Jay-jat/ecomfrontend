@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Search from "./Search";
 
 
 const Header = () => {
@@ -186,9 +187,11 @@ const Header = () => {
       </div>
       <div className="text-white flex lg:gap-5 gap-3 lg:text-[16px] text-[20px] ">
         <i class="fa fa-search hidden lg:block" aria-hidden="true"></i>
+        
         <i class="fa fa-user" aria-hidden="true"></i>
         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
       </div>
+      <Search></Search>
     </header>
   );
 };
