@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SignIn from "./SignIn";
-import Mycart from "./Mycart";
+import Search from "./Search";
 
 
 const Header = () => {
@@ -194,7 +193,13 @@ const Header = () => {
       <i class="fa fa-search text-[20px] " aria-hidden="true"></i>
         <i onClick={()=> setShowSignIn(true)} class=" cursor-pointer fa fa-user text-[22px]" aria-hidden="true"></i>
         <i onClick={()=> setShowCart(true)}  class=" cursor-pointer fa fa-shopping-cart text-[20px]" aria-hidden="true"></i>
+      <div className="text-white flex lg:gap-5 gap-3 lg:text-[16px] text-[20px] ">
+        <i class="fa fa-search hidden lg:block" aria-hidden="true"></i>
+        
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
       </div>
+      <Search></Search>
     </header>
   );
   
