@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SignIn from "./SignIn";
+import Mycart from "./Mycart";
 
 
 const Header = () => {
   const navigate = useNavigate();
+  const [showSignIn, setShowSignIn] = useState(false)
+  const [showCart, setShowCart] = useState(false)
 
   return (
-    <header className="bg-transparent z-10 fixed w-[100%] h-[8vh] text-white flex justify-between lg:px-[10%] px-[5%] items-center ">
+    <header className="bg-transparent z-10 fixed w-[100%] h-[8vh] text-white flex justify-between lg:px-[8%] ] items-center  ">
+      <SignIn showSignIn={showSignIn} setShowSignIn={setShowSignIn}></SignIn>
+      <Mycart showCart={showCart} setShowCart={setShowCart}></Mycart>
       <div className="lg:hidden flex gap-3 text-[20px]">
         <i class="fa fa-bars" aria-hidden="true"></i>
         <i class="fa fa-search" aria-hidden="true"></i>
@@ -15,11 +21,11 @@ const Header = () => {
         className="h-[3vh]"
         src="https://www.gonoise.com/cdn/shop/files/Untitled-1_2.png?v=1727772937"
       ></img>
-      <div className="lg:flex hidden text-[14px] ">
-        <div className="menu-item h-[8vh]  flex items-center px-5  cursor-pointer">
-          <div className="smartwatch-hover cursor-pointer">
+      <div className="lg:flex hidden text-[14px] gap-4 ">
+        <div className="menu-item h-[8vh]  flex items-center px-6  cursor-pointer">
+          <div className="smartwatch-hover cursor-pointer font-bold text-[15px] mt-1">
             <label>Smart Watches</label>
-            <i class="fa fa-angle-down" aria-hidden="true"></i>
+            <i class=" px-1 fa fa-angle-down" aria-hidden="true"></i>
             </div>
            <div className="category-div bg-white absolute top-[8vh] left-0  w-full flex justify-center ">
             <div className="w-[85%] py-6 flex gap-6 h-[90vh]">
@@ -100,11 +106,11 @@ const Header = () => {
            </div>
         </div>
     
-        <div className="lg:flex hidden text-[14px]">
+        <div className="lg:flex hidden text-[14px] gap-4 justify-center items-center">
         <div className="menu-item h-[8vh] flex items-center   cursor-pointer">
-          <div className="wireless-hover">
+          <div className="wireless-hover font-bold text-[15px] ">
             <label>Wireless Audio</label>
-            <i class="fa fa-angle-down" aria-hidden="true"></i>
+            <i class=" px-1 mt-1 fa fa-angle-down" aria-hidden="true"></i>
             </div>
            <div className="bg-white category-div absolute top-[8vh] left-0  w-full flex justify-center ">
             <div className="w-[85%] py-6 flex gap-6 h-[90vh]">
@@ -173,24 +179,25 @@ const Header = () => {
             </div>
            </div>
         </div>
-        <div onClick={()=>navigate("./Powerseries")} className="power-div">
-        <label className="h-[8vh] flex items-center ">Power Series</label>
+        <div onClick={()=>navigate("./Powerseries")} className="power-div ml-4 ">
+        <label className="h-[8vh] flex items-center font-bold text-[15px] ">Power Series</label>
         </div>
         <div className="accessories-div">
-          <label className="h-[8vh] flex items-center ">Accesories</label>
+          <label className="h-[8vh] flex items-center font-bold text-[15px] ">Accesories</label>
           </div>
         <div className="gift-div">
-          <label className="h-[8vh] flex items-center ">Gift Store</label>
+          <label className="h-[8vh] flex items-center text-[15px] font-bold ">Gift Store</label>
           </div>
       </div>
       </div>
-      <div className="text-white flex lg:gap-5 gap-3 lg:text-[16px] text-[20px] ">
-        <i class="fa fa-search hidden lg:block" aria-hidden="true"></i>
-        <i class="fa fa-user" aria-hidden="true"></i>
-        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+      <div className="text-white flex lg:gap-5 gap-3 lg:text-[16px] text-[20px] ml-2">
+      <i class="fa fa-search text-[20px] " aria-hidden="true"></i>
+        <i onClick={()=> setShowSignIn(true)} class=" cursor-pointer fa fa-user text-[22px]" aria-hidden="true"></i>
+        <i onClick={()=> setShowCart(true)}  class=" cursor-pointer fa fa-shopping-cart text-[20px]" aria-hidden="true"></i>
       </div>
     </header>
   );
+  
 };
 
 export default Header;
