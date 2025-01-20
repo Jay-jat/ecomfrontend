@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Search from "./Search";
-
+import SignIn from "./SignIn";
+import Mycart from "./Mycart";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -199,7 +200,9 @@ const Header = () => {
         <i class="fa fa-user" aria-hidden="true"></i>
         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
       </div>
-      <Search></Search>
+      </div>
+
+      {/* <Search></Search> */}
     </header>
   );
   
