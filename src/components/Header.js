@@ -10,7 +10,7 @@ const Header = () => {
   const [showCart, setShowCart] = useState(false)
 
   return (
-    <header className="bg-transparent z-10 fixed w-[100%] h-[8vh] text-white flex justify-between lg:px-[8%] ] items-center  ">
+    <header className="bg-black z-10 fixed w-[100%] h-[8vh] text-white flex justify-between lg:px-[8%] ] items-center  ">
       <SignIn showSignIn={showSignIn} setShowSignIn={setShowSignIn}></SignIn>
       <Mycart showCart={showCart} setShowCart={setShowCart}></Mycart>
       <div className="lg:hidden flex gap-3 text-[20px]">
@@ -179,14 +179,14 @@ const Header = () => {
             </div>
            </div>
         </div>
-        <div onClick={()=>navigate("./Powerseries")} className="power-div ml-4 ">
-        <label className="h-[8vh] flex items-center font-bold text-[15px] ">Power Series</label>
+        <div onClick={()=>navigate("/Powerseries")} className="power-div ml-4  ">
+        <label className="h-[8vh] flex items-center font-bold text-[15px] cursor-pointer ">Power Series</label>
         </div>
-        <div className="accessories-div">
-          <label className="h-[8vh] flex items-center font-bold text-[15px] ">Accesories</label>
+        <div onClick={()=>navigate("/Accessories")}  className="accessories-div ">
+          <label className="h-[8vh] flex items-center font-bold text-[15px] cursor-pointer ">Accesories</label>
           </div>
-        <div className="gift-div">
-          <label className="h-[8vh] flex items-center text-[15px] font-bold ">Gift Store</label>
+        <div onClick={()=>navigate("/Gift")} className="gift-div">
+          <label className="h-[8vh] flex items-center text-[15px] font-bold cursor-pointer ">Gift Store</label>
           </div>
       </div>
       </div>
@@ -194,12 +194,11 @@ const Header = () => {
       <i class="fa fa-search text-[20px] " aria-hidden="true"></i>
         <i onClick={()=> setShowSignIn(true)} class=" cursor-pointer fa fa-user text-[22px]" aria-hidden="true"></i>
         <i onClick={()=> setShowCart(true)}  class=" cursor-pointer fa fa-shopping-cart text-[20px]" aria-hidden="true"></i>
-      <div className="text-white flex lg:gap-5 gap-3 lg:text-[16px] text-[20px] ">
-        <i class="fa fa-search hidden lg:block" aria-hidden="true"></i>
-        
+      {/* <div className="text-white flex lg:gap-5 gap-3 lg:text-[16px] text-[20px] ">
+        <i class="fa fa-search hidden lg:block" aria-hidden="true"></i>   
         <i class="fa fa-user" aria-hidden="true"></i>
         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-      </div>
+      </div> */}
       </div>
 
       {/* <Search></Search> */}

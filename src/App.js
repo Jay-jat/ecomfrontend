@@ -2,6 +2,9 @@ import React from 'react'
 import{BrowserRouter,Routes,Route} from 'react-router-dom'
 import Home from './Pages/Home'
 import Powerseries from './Pages/Powerseries'
+import Accessories from './Pages/Accessories'
+import Gift from './Pages/Gift'
+import Account from './Pages/Account'
 
 
 function App() {
@@ -10,6 +13,9 @@ function App() {
    <Routes>
     <Route path='/' element={<Home/>} ></Route>
     <Route path='/Powerseries' element={<Powerseries/>} ></Route>
+    <Route path='/Accessories' element={<Accessories/>}></Route>
+    <Route path='/Gift' element={<Gift/>}></Route>
+    <Route path='/Account' element={<Account/>}></Route>
    </Routes>
    </BrowserRouter>
   )

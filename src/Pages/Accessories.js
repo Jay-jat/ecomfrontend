@@ -1,15 +1,17 @@
-import React from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import React from 'react'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
-function Powerseries() {
+function Accessories() {
   return (
-    <div className="">
-      <Header></Header>
-      <div className=" w-[100%] flex justify-center items-center bg-black h-[80vh]">
-        <div className=" h-[74vh] mt-[5%]  w-[100%]">
-          <img className=" power-image" src="https://www.gonoise.com/cdn/shop/files/Desktop_1__compressedwebp85.webp?v=1734678645"></img>
-        </div>
+    <div>
+    <Header></Header>
+    <div className=' h-[100vh] w-[100%] '>
+      <video className=' h-[100%] w-[100%] ' src='https://cdn.shopify.com/videos/c/o/v/6e457ab1bd634d77b4b91161587ae051.mp4'></video>
+    </div>
+    <div className=' text-white flex justify-between h-[9vh] w-[100%] bg-black items-center px-4 '>
+        <label className=' text-[20px]'>FIND THE PERFECT STRAP FOR YOUR WATCH</label>
+        <button className=' bg-white rounded-full h-[4.5vh] w-[9%] text-[14px] text-black font-bold'>SELECT WATCH</button>
       </div>
       <div className="  w-[100%] bg-white flex">
         <div className=" w-[25%] h-[100%] ">
@@ -60,12 +62,17 @@ function Powerseries() {
             <i class="fa fa-angle-down" aria-hidden="true"></i>
           </div>
           <div className=" h-[.5px] w-[100%] bg-[gray] "></div>
+          <div className=" flex justify-between px-6 py-2 ">
+            <label className=" text-[19px] font-bold  ">Preffered Features</label>
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </div>
+          <div className=" h-[.5px] w-[100%] bg-[gray] "></div>
         </div>
         <div className=" w-[75%]">
-          <div className=" h-[7.8vh] w-[100%]  px-4 flex justify-between items-center">
+          <div className=" h-[7.8vh] w-[100%]  px-6 flex justify-between items-center">
             <div>
-              <label className=" text-[29px] font-bold">
-                Noise Power Series
+              <label className=" text-[35px] tracking-wider  font-bold">
+                Accesories
               </label>
             </div>
             <div className=" flex gap-6 items-center ">
@@ -73,7 +80,7 @@ function Powerseries() {
               <i class=" text-[gray]  fa fa-angle-right" aria-hidden="true"></i>
               <label className=" text-[gray] text-[15.5px] ">Collections</label>
               <i class=" text-[gray] fa fa-angle-right" aria-hidden="true"></i>
-              <label className="text-[15.5px]">Noise Power Series</label>
+              <label className="text-[15.5px]">Accesories</label>
             </div>
           </div>
           <div className=" h-[0.5px] w-[100%] bg-[gray] "></div>
@@ -130,9 +137,9 @@ function Powerseries() {
          
         </div>
       </div>
-      <Footer></Footer>
+    <Footer></Footer>
     </div>
-  );
+)
 }
 
-export default Powerseries;
+export default Accessories
