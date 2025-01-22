@@ -181,9 +181,10 @@ function SingleProduct() {
           </div>
         </div>
       </div>
-
+      
       <img className="h-[100vh] w-[100%]" src="https://img-cdn.thepublive.com/fit-in/1200x675/filters:format(webp)/entrackr/media/post_attachments/wp-content/uploads/2022/04/noise.jpg"></img>
-
+      <img className="h-[70vh] w-[100%]" src="https://images.javatpoint.com/company/images/noise-company.png"></img>
+      
       {/* Disclaimer Section */}
       <div className="w-[80%] mx-auto mt-28 mb-10 bg-[#FAFAFA] p-6 rounded-lg shadow-md">
 
