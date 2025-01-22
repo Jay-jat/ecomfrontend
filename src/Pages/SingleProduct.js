@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -22,6 +22,13 @@ function SingleProduct() {
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
   };
+
+   // Automatically advance the carousel every 3 seconds
+   useEffect(() => {
+    const interval = setInterval(nextImage, 3000); // 3 seconds interval
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
 
   const goToImage = (index) => {
     setCurrentImageIndex(index);
