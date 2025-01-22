@@ -10,7 +10,7 @@ const Header = () => {
   const [showCart, setShowCart] = useState(false)
 
   return (
-    <header className="bg-transparent z-10 fixed w-[100%] h-[8vh] text-white flex justify-between lg:px-[8%] ] items-center  ">
+    <header className="bg-black z-10 fixed w-[100%] h-[8vh] text-white flex justify-between lg:px-[8%] ] items-center  ">
       <SignIn showSignIn={showSignIn} setShowSignIn={setShowSignIn}></SignIn>
       <Mycart showCart={showCart} setShowCart={setShowCart}></Mycart>
       <div className="lg:hidden flex gap-3 text-[20px]">
@@ -194,12 +194,7 @@ const Header = () => {
       <i class="fa fa-search text-[20px] " aria-hidden="true"></i>
         <i onClick={()=> setShowSignIn(true)} class=" cursor-pointer fa fa-user text-[22px]" aria-hidden="true"></i>
         <i onClick={()=> setShowCart(true)}  class=" cursor-pointer fa fa-shopping-cart text-[20px]" aria-hidden="true"></i>
-      <div className="text-white flex lg:gap-5 gap-3 lg:text-[16px] text-[20px] ">
-        <i class="fa fa-search hidden lg:block" aria-hidden="true"></i>
-        
-        <i class="fa fa-user" aria-hidden="true"></i>
-        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-      </div>
+      
       </div>
 
       {/* <Search></Search> */}

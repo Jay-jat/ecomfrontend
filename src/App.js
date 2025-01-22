@@ -2,6 +2,7 @@ import React from 'react'
 import{BrowserRouter,Routes,Route} from 'react-router-dom'
 import Home from './Pages/Home'
 import Powerseries from './Pages/Powerseries'
+import SingleProduct from './Pages/SingleProduct'
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
    <Routes>
     <Route path='/' element={<Home/>} ></Route>
     <Route path='/Powerseries' element={<Powerseries/>} ></Route>
+    <Route path='/singleproduct' element={<SingleProduct/>} ></Route>
    </Routes>
    </BrowserRouter>
   )
