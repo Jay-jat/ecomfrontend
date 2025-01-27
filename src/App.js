@@ -5,6 +5,7 @@ import Powerseries from './Pages/Powerseries'
 import Accessories from './Pages/Accessories'
 import Gift from './Pages/Gift'
 import Account from './Pages/Account'
+import SingleProduct from './Pages/SingleProduct'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <Route path='/Accessories' element={<Accessories/>}></Route>
     <Route path='/Gift' element={<Gift/>}></Route>
     <Route path='/Account' element={<Account/>}></Route>
+    <Route path='/singleproduct' element={<SingleProduct/>} ></Route>
    </Routes>
    </BrowserRouter>
   )
