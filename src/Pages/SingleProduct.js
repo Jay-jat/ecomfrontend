@@ -3,15 +3,10 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 function SingleProduct() {
+  const productDetail = JSON.parse(localStorage.getItem("product-detail"))
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const images = [
-    "https://www.gonoise.com/cdn/shop/files/3_05a11b1c-3a15-4a70-b433-a7b145c14b4c.png?v=1716531880",
-    "https://www.gonoise.com/cdn/shop/files/4_344ca49c-c4a9-44a5-b34e-7aa4a40d87ef.webp?v=1721364460",
-    "https://www.gonoise.com/cdn/shop/files/3_e8d1c594-2efc-4813-b490-a9401249e581.webp?v=1721364459",
-    "https://www.gonoise.com/cdn/shop/files/6_3a92cd9d-6031-43bf-9401-e3716248e959.png?v=1716531880",
-    "https://www.gonoise.com/cdn/shop/files/4_ee8431dc-f193-4a4e-8290-40543365921d.png?v=1716531880",
-  ];
+  const images = productDetail.images
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -41,6 +36,7 @@ function SingleProduct() {
         {/* Left Sticky Section */}
         <div className="bg-white h-[89vh] w-[57%] flex items-center justify-center sticky top-0">
           <div className="relative h-[60vh] w-[60vh]">
+            
             <img
               src={images[currentImageIndex]}
               alt="Main Carousel"
@@ -60,7 +56,7 @@ function SingleProduct() {
             <i className="fa fa-chevron-right" aria-hidden="true"></i>
           </button>
           <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {images.map((_, index) => (
+            {productDetail.images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToImage(index)}
@@ -78,7 +74,7 @@ function SingleProduct() {
         <div className="h-auto flex justify-center w-[43%]">
           <div className="bg-white w-[95%] p-5">
             <div className="flex mt-20 items-center justify-between border-b pb-2">
-              <h2 className="text-[34px] font-bold text-black">Air Clips</h2>
+              <h2 className="text-[34px] font-bold text-black">{productDetail.title}</h2>
               <div className="text-[20px] font-semibold text-[#363535]">
                 <i className="fa fa-star text-yellow-500 text-[16px] pr-2"></i>
                 4.6

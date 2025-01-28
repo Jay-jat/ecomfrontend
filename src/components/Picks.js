@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 function Picks() {
+  const navigate = useNavigate()
 
 const [getData,setGetdata]= useState([])
   axios.get('http://localhost:9001/product').then(
@@ -36,7 +38,7 @@ const [getData,setGetdata]= useState([])
 
         {getData.map((i,index)=> index<5 &&
 
-        <div className=" w-[16%] rounded-[10px] flex flex-col px-2 shadow-xl">
+        <div onClick={()=>{localStorage.setItem("product-detail", JSON.stringify(i)) ;navigate('/singleproduct')}} className=" w-[16%] rounded-[10px] flex flex-col px-2 shadow-xl">
           <img
             className="h-[32vh] w-[100%] rounded-[10%] mt-1 bg-gray-300"
             src= {i.images[0]}
@@ -61,13 +63,13 @@ const [getData,setGetdata]= useState([])
             <i class="text-[7px] fa fa-star-o" aria-hidden="true"></i>
             <label className=" text-[9px] ">(89)</label>
           </div>
-          <label className=" font-bold">{i.title}</label>?
+          <label className=" font-bold">{i.title}</label>
           <label className=" text-[13px]">
           <strike className="text-gray-300 ">₹{i.price}</strike> ₹{Math.floor((i.price*i.discount)/100)}
 
           </label>
           <label className=" text-[10px] py-1">
-            {i.features.join(' | ')}
+            {i.features.filter((i, index)=> index < 2).join(' | ')}
           </label>
         </div>
         )}
