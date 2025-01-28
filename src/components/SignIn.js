@@ -1,8 +1,29 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 function SignIn({ showSignIn, setShowSignIn }) {
   const [activePage, setActivePage] = useState("signIn");
-
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [mobile, setMobile] = useState('')
+  const addUserData = ()=>{
+    //Storing data into object
+    const user = {
+      name: name,
+      mobile: mobile,
+      password: password,
+      email: email
+    }
+    // Sending post request to the user end point
+    axios.post('http://localhost:5000/users', user).then(
+      (res)=>{
+        alert('Data Successfully Posted!');
+        setShowSignIn(false)
+      },
+      (err)=>{alert(err.message)}
+    )
+  }
   return (
     <div
       style={{ right: showSignIn ? "0%" : "-30%" }}
@@ -68,21 +89,30 @@ function SignIn({ showSignIn, setShowSignIn }) {
               <input
                 type="text"
                 placeholder="Name"
-                className="block w-full border mt-2 p-2"
+                className="block text-black w-full border mt-2 p-2"
+                onChange={(e)=> setName(e.target.value)}
               />
               <input
                 type="email"
                 placeholder="Email"
-                className="block w-full border mt-2 p-2"
+                className="block text-black w-full border mt-2 p-2"
+                onChange={(e)=> setEmail(e.target.value)}
+              />
+              <input
+                placeholder="Number"
+                className="block text-black w-full border mt-2 p-2"
+                onChange={(e)=> setMobile(e.target.value)}
               />
               <input
                 type="password"
                 placeholder="Password"
-                className="block w-full border mt-2 p-2"
+                className="block text-black w-full border mt-2 p-2"
+                onChange={(e)=> setPassword(e.target.value)}
               />
               <button
                 type="submit"
                 className="bg-blue-500 text-white px-4 py-2 mt-3 rounded"
+                onClick={()=> addUserData()}
               >
                 Submit
               </button>
