@@ -1,29 +1,57 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function SignIn({ showSignIn, setShowSignIn }) {
+  useEffect(()=>{getAllUserData()}, [])
   const [activePage, setActivePage] = useState("signIn");
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [mobile, setMobile] = useState('')
-  const addUserData = ()=>{
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [allUserData, setAllUserData] = useState([]);
+  const getAllUserData = () => {
+    axios.get("http://localhost:9000/users").then(
+      (res) => setAllUserData(res.data),
+      (err) => alert(err.message)
+    );
+  };
+
+  const addUserData = () => {
     //Storing data into object
     const user = {
       name: name,
       mobile: mobile,
       password: password,
-      email: email
-    }
-    // Sending post request to the user end point
-    axios.post('http://localhost:5000/users', user).then(
-      (res)=>{
-        alert('Data Successfully Posted!');
-        setShowSignIn(false)
+      email: email,
+    };
+
+    axios.post("http://localhost:9000/users", user).then(
+      (res) => {
+        alert("Data Successfully Posted!");
+        setShowSignIn(false);
       },
-      (err)=>{alert(err.message)}
-    )
-  }
+      (err) => {
+        alert(err.message);
+      }
+    );
+
+    // const userData = allUserData.filter((i)=> i.mobile == mobile || i.email == email)
+    // if (userData.length == 0){
+    //  // Sending post request to the user end point
+    // axios.post("http://localhost:9000/users", user).then(
+    //   (res) => {
+    //     alert("Data Successfully Posted!");
+    //     setShowSignIn(false);
+    //   },
+    //   (err) => {
+    //     alert(err.message);
+    //   }
+    // );
+    // } else {
+    //   alert("User already Registered!")
+    // }
+    
+  };
   return (
     <div
       style={{ right: showSignIn ? "0%" : "-30%" }}
@@ -58,11 +86,11 @@ function SignIn({ showSignIn, setShowSignIn }) {
           Sign Up
         </button>
       </div>
-          <div className=" h-[0.5px] w-[100%] bg-[gray]"></div>
+      <div className=" h-[0.5px] w-[100%] bg-[gray]"></div>
       <div className="px-8 mt-6">
-        {activePage === "signIn" ?
+        {activePage === "signIn" ? (
           <div>
-             <label className="text-black font-bold text-[20px] ">Sign In</label>
+            <label className="text-black font-bold text-[20px] ">Sign In</label>
             <div>
               <input
                 type="email"
@@ -80,9 +108,9 @@ function SignIn({ showSignIn, setShowSignIn }) {
               >
                 Submit
               </button>
-              </div>
+            </div>
           </div>
-         : 
+        ) : (
           <div>
             <label className="text-black font-bold text-[20px]">Sign Up</label>
             <div>
@@ -90,35 +118,35 @@ function SignIn({ showSignIn, setShowSignIn }) {
                 type="text"
                 placeholder="Name"
                 className="block text-black w-full border mt-2 p-2"
-                onChange={(e)=> setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
               />
               <input
                 type="email"
                 placeholder="Email"
                 className="block text-black w-full border mt-2 p-2"
-                onChange={(e)=> setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <input
                 placeholder="Number"
                 className="block text-black w-full border mt-2 p-2"
-                onChange={(e)=> setMobile(e.target.value)}
+                onChange={(e) => setMobile(e.target.value)}
               />
               <input
                 type="password"
                 placeholder="Password"
                 className="block text-black w-full border mt-2 p-2"
-                onChange={(e)=> setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <button
                 type="submit"
                 className="bg-blue-500 text-white px-4 py-2 mt-3 rounded"
-                onClick={()=> addUserData()}
+                onClick={() => addUserData()}
               >
                 Submit
               </button>
-              </div>
+            </div>
           </div>
-        }
+        )}
       </div>
     </div>
   );

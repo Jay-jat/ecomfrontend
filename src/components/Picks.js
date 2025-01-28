@@ -4,7 +4,7 @@ import axios from 'axios'
 function Picks() {
 
 const [getData,setGetdata]= useState([])
-  axios.get('http://localhost:9001/product').then(
+  axios.get('http://localhost:9000/product').then(
     (res) => {
       setGetdata(res.data);
     },
@@ -61,7 +61,7 @@ const [getData,setGetdata]= useState([])
             <i class="text-[7px] fa fa-star-o" aria-hidden="true"></i>
             <label className=" text-[9px] ">(89)</label>
           </div>
-          <label className=" font-bold">{i.title}</label>?
+          <label className=" font-bold">{i.title}</label>
           <label className=" text-[13px]">
           <strike className="text-gray-300 ">₹{i.price}</strike> ₹{Math.floor((i.price*i.discount)/100)}
 
