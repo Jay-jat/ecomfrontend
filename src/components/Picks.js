@@ -6,7 +6,7 @@ function Picks() {
   const navigate = useNavigate()
 
 const [getData,setGetdata]= useState([])
-  axios.get('http://localhost:9001/product').then(
+  axios.get('http://localhost:9000/product').then(
     (res) => {
       setGetdata(res.data);
     },
