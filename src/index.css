@@ -95,6 +95,7 @@
 .img1-div{
   background: linear-gradient(to bottom, red, white);
 }
+
 .animation-div{
   animation-name: carousel;
   animation-duration: 4s;

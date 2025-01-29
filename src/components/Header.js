@@ -23,8 +23,8 @@ const Header = () => {
       ></img>
       <div className="lg:flex hidden text-[14px] gap-4 ">
         <div className="menu-item h-[8vh]  flex items-center px-6  cursor-pointer">
-          <div className="smartwatch-hover cursor-pointer font-bold text-[15px] mt-1">
-            <label>Smart Watches</label>
+          <div className="smartwatch-hover cursor-pointer font-bold text-[14px] mt-1">
+            <label className=" cursor-pointer">Smart Watches</label>
             <i class=" px-1 fa fa-angle-down" aria-hidden="true"></i>
             </div>
            <div className="category-div bg-white absolute top-[8vh] left-0  w-full flex justify-center ">
@@ -108,8 +108,8 @@ const Header = () => {
     
         <div className="lg:flex hidden text-[14px] gap-4 justify-center items-center">
         <div className="menu-item h-[8vh] flex items-center   cursor-pointer">
-          <div className="wireless-hover font-bold text-[15px] ">
-            <label>Wireless Audio</label>
+          <div className="wireless-hover font-bold text-[14px] ">
+            <label className=" cursor-pointer">Wireless Audio</label>
             <i class=" px-1 mt-1 fa fa-angle-down" aria-hidden="true"></i>
             </div>
            <div className="bg-white category-div absolute top-[8vh] left-0  w-full flex justify-center ">
@@ -180,28 +180,25 @@ const Header = () => {
            </div>
         </div>
         <div onClick={()=>navigate("/Powerseries")} className="power-div ml-4  ">
-        <label className="h-[8vh] flex items-center font-bold text-[15px] cursor-pointer ">Power Series</label>
+        <label className="h-[8vh] flex items-center font-bold text-[14px] cursor-pointer ">Power Series</label>
         </div>
         <div onClick={()=>navigate("/Accessories")}  className="accessories-div ">
-          <label className="h-[8vh] flex items-center font-bold text-[15px] cursor-pointer ">Accesories</label>
+          <label className="h-[8vh] flex items-center font-bold text-[14px] cursor-pointer ">Accesories</label>
           </div>
         <div onClick={()=>navigate("/Gift")} className="gift-div">
-          <label className="h-[8vh] flex items-center text-[15px] font-bold cursor-pointer ">Gift Store</label>
+          <label className="h-[8vh] flex items-center text-[14px] font-bold cursor-pointer ">Gift Store</label>
           </div>
       </div>
       </div>
-      <div className="text-white flex lg:gap-5 gap-3 lg:text-[16px] text-[20px] ml-2">
-      <i class="fa fa-search text-[20px] " aria-hidden="true"></i>
-        <i onClick={()=> setShowSignIn(true)} class=" cursor-pointer fa fa-user text-[22px]" aria-hidden="true"></i>
+      <div className="text-white flex items-center lg:gap-5 gap-3 lg:text-[16px] text-[20px] ml-2">
+      <i class="fa fa-search text-[18px] " aria-hidden="true"></i>
+      <i class="fa fa-times" aria-hidden="true"></i>
+      <i onClick={()=> setShowSignIn(true)} class=" cursor-pointer fa fa-user text-[20px]" aria-hidden="true"></i>
         <i onClick={()=> setShowCart(true)}  class=" cursor-pointer fa fa-shopping-cart text-[20px]" aria-hidden="true"></i>
-      {/* <div className="text-white flex lg:gap-5 gap-3 lg:text-[16px] text-[20px] ">
-        <i class="fa fa-search hidden lg:block" aria-hidden="true"></i>   
-        <i class="fa fa-user" aria-hidden="true"></i>
-        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-      </div> */}
+     
       </div>
 
-      {/* <Search></Search> */}
+      {/* { <Search></Search> } */}
     </header>
   );
   

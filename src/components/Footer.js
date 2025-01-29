@@ -6,10 +6,10 @@ function Footer() {
       <div className=" h-[35vh] w-[100%] ">
         <div className=" py-10 ">
           <img
-            className="h-[4vh] px-28"
+            className="h-[4vh] px-32"
             src="https://www.gonoise.com/cdn/shop/files/Untitled-1_2.png?v=1727772937"
           ></img>
-          <div className=" flex gap-36 px-28 mt-4">
+          <div className=" flex gap-36 px-32 mt-4">
             <div className=" flex flex-col  mt-4 gap-1">
               <label className=" text-[11px] text-white">
                 SHOP BY FEATURES
@@ -65,7 +65,7 @@ function Footer() {
         <div className=" h-[0.5px] w-[80%] bg-[gray] ml-[9%]"></div>
       </div>
       <div className=" h-[35vh] w-[100%]  mt-20">
-        <div className=" flex gap-56 px-28 mt-4 ">
+        <div className=" flex gap-56 px-32 mt-4 ">
           <div className=" flex flex-col  mt-4 gap-1">
             <label className=" text-[11px] text-white">SHOP BY FEATURES</label>
             <label className="text-[13px] text-white">Gaming Earbuds</label>
@@ -84,7 +84,7 @@ function Footer() {
       </div>
 
       <div className=" h-[30vh] w-[100%] bg-black flex ">
-        <div className=" px-28 text-white w-[50%] ">
+        <div className=" px-32 text-white w-[50%] ">
           <div className=" flex flex-col w-full gap-1 ">
             <div className="">
               <label className=" text-[11px] relative top-[-6px] text-[gray]">

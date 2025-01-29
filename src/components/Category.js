@@ -7,7 +7,7 @@ function Category() {
             <label>Explore by Category</label>
         </div>
         <div className=' flex gap-8 justify-center items-center mt-5'>
-        <div className='flex h-[40vh] w-[15%]'>
+        <div className='flex h-[40vh] w-[17%]'>
             <img className=' rounded-2xl' src='https://www.gonoise.com/cdn/shop/files/Smartwatches-D.webp?v=1729498070'></img>
         </div>
         <div className='flex gap-2 h-[40vh] w-[15%] '>

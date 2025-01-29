@@ -17,19 +17,19 @@ const [getData,setGetdata]= useState([])
 
   return (
     <div className="h-[60vh] w-[100%]  flex gap-2 flex-col ">
-      <div className=" font-bold text-2xl px-28">
+      <div className=" font-bold text-3xl px-28">
         <label>Top Picks For You</label>
       </div>
-      <div className="flex justify-between gap-8 text-[13.5px] px-24 mt-2">
-        <div className="flex justify-between w-[50%] h-[3.5vh] text-center">
-          <div className="bg-gray-300 rounded-[10px] h-[3.5vh] w-[20%] text-center">
+      <div className="flex justify-between  text-[13.5px]  mt-2">
+        <div className="flex gap-5 justify-between  w-[50%] h-[3.5vh] px-28 text-center items-center">
+          <div className="bg-gray-300 rounded-[14px] flex items-center justify-center h-[4vh] w-[22%] text-center">
             BestSellers
           </div>
           <label className=" text-[14px]">New Launches</label>
           <label className=" text-[14px]">Curated Steals</label>
           <label className=" text-[14px]">The Noise Choice</label>
         </div>
-        <div className="w-[15%] text-center underline">
+        <div className="w-[20%] text-center underline">
           <label className=" text-[10px]">View All</label>
         </div>
       </div>
