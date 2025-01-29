@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 
@@ -6,12 +6,9 @@ function Picks() {
   const navigate = useNavigate()
 
 const [getData,setGetdata]= useState([])
-  axios.get('http://localhost:9000/product').then(
-    (res) => {
-      setGetdata(res.data);
-    },
-    (err) => {}
-  );
+const getAllProducts = ()=>{
+  axios.get('http://localhost:9000/product').then((res)=>setGetdata(res.data))
+}
 
 
 
@@ -25,12 +22,12 @@ const [getData,setGetdata]= useState([])
           <div className="bg-gray-300 rounded-[14px] flex items-center justify-center h-[4vh] w-[22%] text-center">
             BestSellers
           </div>
-          <label className=" text-[14px]">New Launches</label>
-          <label className=" text-[14px]">Curated Steals</label>
-          <label className=" text-[14px]">The Noise Choice</label>
+          <label onClick={()=> navigate('/manyproducts')} className=" text-[14px] cursor-pointer">New Launches</label>
+          <label onClick={() => navigate('/manyproducts')} className=" text-[14px] cursor-pointer ">Curated Steals</label>
+          <label onClick={()=> navigate('/manyproducts')} className=" cursor-pointer text-[14px]">The Noise Choice</label>
         </div>
         <div className="w-[15%] text-center underline">
-          <label onClick={()=>navigate('/manyproduct')} className=" text-[10px]">View All</label>
+          <label onClick={()=>navigate('/manyproduct')} className=" text-[10px] cursor-pointer">View All</label>
         </div>
       </div>
 

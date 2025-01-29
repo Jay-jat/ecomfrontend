@@ -19,6 +19,7 @@ const Header = () => {
         onClick={() => navigate("/")}
         src="https://www.gonoise.com/cdn/shop/files/Untitled-1_2.png?v=1727772937"
       ></img>
+      {JSON.stringify(showModal)} - value
       <div className="lg:flex hidden text-[14px] gap-4 ">
         <div className="menu-item h-[8vh]  flex items-center px-6  cursor-pointer">
           <div className="smartwatch-hover cursor-pointer font-bold text-[14px] mt-1">
@@ -325,7 +326,7 @@ const Header = () => {
           <i
             onClick={() => setShowModal("Search Bar")}
             class="fa fa-search text-[20px] "
-            aria-hidden="true"
+            // aria-hidden="true"
           ></i>
         )}
         <i
@@ -339,8 +340,11 @@ const Header = () => {
           aria-hidden="true"
         ></i>
       </div>
-      {showModal == "Search Bar" ? <Search></Search> : null}
-      {showModal == "MyCart" ? <Mycart></Mycart> : null}
+      {showModal == "Search Bar" ? <Search ></Search> : null}
+      {showModal == "MyCart" ? <Mycart showModal={showModal} setShowModal={setShowModal}></Mycart>: null}
+    
+      
+      
       {showModal == "SignIn" ? <SignIn></SignIn> : null}
     </header>
   );
