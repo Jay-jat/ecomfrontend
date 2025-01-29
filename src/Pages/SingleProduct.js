@@ -7,6 +7,7 @@ function SingleProduct() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = productDetail.images
+  const features= productDetail.features
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -81,12 +82,12 @@ function SingleProduct() {
               </div>
             </div>
             <div className="text-[16px] font-medium text-[#6e6e6e] mt-3">
-              1.85" AMOLED, Customized Button
+             {productDetail.description}
             </div>
             <div className="flex items-center gap-3 mt-4">
-              <label className="text-[24px] font-bold text-black">₹3,499</label>
+              <label className="text-[24px] font-bold text-black">₹{Math.floor((productDetail.price*productDetail.discount)/100)}</label>
               <label className="text-[16px] font-medium line-through text-[#898989]">
-                ₹8,999
+                {productDetail.price}
               </label>
               <label className="text-[14px] font-medium text-[#6e6e6e]">
                 (MRP Inclusive of all taxes)
@@ -136,21 +137,23 @@ function SingleProduct() {
             <div>
               <h3 className="text-lg font-semibold mb-4 mt-10">Key Features</h3>
               <div className="flex flex-wrap gap-x-20 gap-y-10">
-                <div className="flex items-center space-x-2">
+              
+                <div className=" flex items-center space-x-2">
                   <i className="fa fa-assistive-listening-systems" aria-hidden="true"></i>
-                  <label>Upto 40 hours playtime</label>
+                  <label> {productDetail.features.find((i, index)=> index == 0)}</label>
                 </div>
+             
                 <div className="flex items-center space-x-2">
                   <i className="fa fa-american-sign-language-interpreting" aria-hidden="true"></i>
-                  <label>Dual pairing</label>
+                  <label>{productDetail.features.find((i, index)=> index == 1)}</label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <i className="fa fa-snowflake-o" aria-hidden="true"></i>
-                  <label>Touch/Button control</label>
+                  <label>{productDetail.features.find((i, index)=> index == 2)}</label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <i className="fa fa-bluetooth-b" aria-hidden="true"></i>
-                  <label>BT version</label>
+                  <label>{productDetail.features.find((i, index)=> index == 3)}</label>
                 </div>
               </div>
             </div>

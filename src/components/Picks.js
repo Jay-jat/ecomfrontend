@@ -29,8 +29,8 @@ const [getData,setGetdata]= useState([])
           <label className=" text-[14px]">Curated Steals</label>
           <label className=" text-[14px]">The Noise Choice</label>
         </div>
-        <div className="w-[20%] text-center underline">
-          <label className=" text-[10px]">View All</label>
+        <div className="w-[15%] text-center underline">
+          <label onClick={()=>navigate('/manyproduct')} className=" text-[10px]">View All</label>
         </div>
       </div>
 

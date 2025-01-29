@@ -12,8 +12,8 @@ function App() {
    <BrowserRouter>
    <Routes>
     <Route path='/' element={<Home/>} ></Route>
-    <Route path='/Powerseries' element={<Powerseries/>} ></Route>
-    <Route path='/Gift' element={<Gift/>}></Route>
+    <Route path='/manyproduct' element={<Powerseries/>} ></Route>
+    <Route path='/gift' element={<Gift/>}></Route>
     <Route path='/Account' element={<Account/>}></Route>
     <Route path='/singleproduct' element={<SingleProduct/>} ></Route>
    </Routes>
