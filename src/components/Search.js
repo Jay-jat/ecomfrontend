@@ -2,8 +2,8 @@ import React from 'react'
 
 function Search() {
   return (
-    <div >
-      <div className='h-[80vh] w-[60%] left-[35vh] top-0 bg-white absolute border border-black'>
+    
+      <div className='h-[80vh] w-[60%] top-0 left-[35vh] bg-white fixed border border-black'>
         <div className='h-[7.5vh] border border-black w-full flex items-center justify-between text-lg'>
             <i className='text-black flex justify-end items-center w-[4.5%] h-full fa fa-search'></i>
             <input className='w-[95%] h-full text-black border-0 focus:outline-none focus:border-0' type="search" placeholder='Search....' />
@@ -104,7 +104,7 @@ function Search() {
             </div>
         </div>
       </div>
-    </div>
+    
   )
 }
 

@@ -5,11 +5,14 @@ import axios from "axios";
 
 function Powerseries() {
   const [getData, setGetdata] = useState([]);
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     axios.get("http://localhost:9000/product").then(
       (res) => {
         setGetdata(res.data);
+        setLoading(false)
       },
       (err) => {
         console.error(err);
@@ -61,8 +64,9 @@ function Powerseries() {
             </div>
           </div>
           <hr className="bg-gray-400" />
+          {loading == false ?
           <div className="flex flex-wrap gap-4">
-            {getData.map((item, index) => (
+            {getData.filter((i)=> i.category === localStorage.getItem("category")).map((item, index) => (
               <div key={index} className="flex flex-col w-[32%] border">
                 <div className="w-full flex justify-center items-center ">
                   <img className="w-full h-[100%]" src={item.images[0]} alt={item.title} />
@@ -102,6 +106,17 @@ function Powerseries() {
               </div>
             ))}
           </div>
+          :
+          <div id="container">
+  <div class="spinner">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>}
         </div>
       </div>
       <Footer />
