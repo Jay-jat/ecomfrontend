@@ -340,7 +340,7 @@ const Header = () => {
         ></i>
       </div>
       {showModal == "Search Bar" ? <Search></Search> : null}
-      {showModal == "MyCart" ? <Mycart></Mycart> : null}
+     <Mycart showModal={showModal} setShowModel={setShowModal}></Mycart> 
       {showModal == "SignIn" ? <SignIn></SignIn> : null}
     </header>
   );
