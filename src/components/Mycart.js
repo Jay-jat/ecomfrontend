@@ -1,15 +1,15 @@
 import React from "react";
 
-function Mycart({ showModel, setShowModel }) {
+function Mycart({ showModal, setShowModal }) {
   return (
     <div
-      style={{ right: showModel == "MyCart" ? "0%" : "-60%" }}
+      style={{ right: showModal === "MyCart" ? "0%" : "-60%" }}
       className=" h-[100vh] w-[42%] bg-white fixed top-0 duration-1000  "
     >
       <div className=" flex justify-between items-center px-5 text-[30px] py-5">
         <label className=" text-black">Your cart</label>
         <label
-          onClick={() => setShowModel("")}
+          onClick={() => setShowModal("")}
           className="text-black cursor-pointer flex justify-end text-[25px] px-3"
         >
           X
