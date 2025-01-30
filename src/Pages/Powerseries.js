@@ -107,7 +107,7 @@ function Powerseries() {
             ))}
           </div>
           :
-          <div id="container">
+          <div className="absolute top-0 left-0" id="container">
   <div class="spinner">
     <div></div>
     <div></div>
