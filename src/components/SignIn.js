@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-function SignIn({ showSignIn, setShowSignIn }) {
+function SignIn({ showModal, setShowModal }) {
   useEffect(()=>{getAllUserData()}, [])
   const [activePage, setActivePage] = useState("signIn");
   const [name, setName] = useState("");
@@ -28,7 +28,7 @@ function SignIn({ showSignIn, setShowSignIn }) {
     axios.post("http://localhost:9000/users", user).then(
       (res) => {
         alert("Data Successfully Posted!");
-        setShowSignIn(false);
+        setShowModal("");
       },
       (err) => {
         alert(err.message);
@@ -41,7 +41,7 @@ function SignIn({ showSignIn, setShowSignIn }) {
     // axios.post("http://localhost:9000/users", user).then(
     //   (res) => {
     //     alert("Data Successfully Posted!");
-    //     setShowSignIn(false);
+    //     setShowModal(false);
     //   },
     //   (err) => {
     //     alert(err.message);
@@ -54,11 +54,11 @@ function SignIn({ showSignIn, setShowSignIn }) {
   };
   return (
     <div
-      style={{ right: showSignIn ? "0%" : "-30%" }}
+      style={{ right: showModal == "SignIn" ? "0%" : "-30%" }}
       className="h-[100vh] w-[25%] duration-1000 bg-white fixed top-0"
     >
       <label
-        onClick={() => setShowSignIn(false)}
+        onClick={() => setShowModal("")}
         className="text-black cursor-pointer flex justify-end text-[25px] px-3"
       >
         X
