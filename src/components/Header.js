@@ -340,12 +340,9 @@ const Header = () => {
           aria-hidden="true"
         ></i>
       </div>
-      {showModal == "Search Bar" ? <Search ></Search> : null}
-      {showModal == "MyCart" ? <Mycart showModal={showModal} setShowModal={setShowModal}></Mycart>: null}
-    
-      
-      
-      {showModal == "SignIn" ? <SignIn></SignIn> : null}
+      {showModal == "Search Bar" ? <Search></Search> : null}
+      <Mycart showModal={showModal} setShowModal={setShowModal}></Mycart>
+      <SignIn showModal={showModal} setShowModal={setShowModal}></SignIn>
     </header>
   );
 };

@@ -1,9 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function Picks() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  useEffect(()=>{getAllproduct()},[])
+
+const [getData,setGetdata]= useState([])
+
+  const getAllproduct = ()=>{
+  axios.get('http://localhost:9000/product').then(
+    (res) => {
+      setGetdata(res.data);
+    },
+    (err) => {}
+  );}
+
 
   const [getData, setGetdata] = useState([]);
   const getAllProducts = () => {

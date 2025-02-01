@@ -21,7 +21,7 @@ function Category() {
         <div onClick={()=>{localStorage.setItem("category", "earphones"); navigate("/manyproduct")}}  className='flex gap-2 h-[40vh] w-[15%] cursor-pointer '>
             <img className=' rounded-2xl' src='https://www.gonoise.com/cdn/shop/files/Accessories-D.webp?v=1729498151'></img>
         </div>
-        <div onClick={()=>{ navigate("/manyproduct")}}  className='flex gap-2 h-[40vh] w-[15%]  cursor-pointer'>
+        <div onClick={()=>{localStorage.removeItem("category");navigate("/manyproduct")}}  className='flex gap-2 h-[40vh] w-[15%] '>
             <img className=' rounded-2xl' src='https://www.gonoise.com/cdn/shop/files/Collection-D.webp?v=1729498199'></img>
         </div>
         </div>
