@@ -292,7 +292,7 @@ const Header = () => {
             </div>
           </div>
           <div
-            onClick={() => navigate("/manyproduct")}
+           onClick={()=> {localStorage.setItem("category","powerseries"); navigate("/manyproduct")}}
             className="power-div ml-4  "
           >
             <label className="h-[8vh] flex items-center font-bold text-[15px] cursor-pointer ">
@@ -300,7 +300,7 @@ const Header = () => {
             </label>
           </div>
           <div
-            onClick={() => navigate("/manyproduct")}
+            onClick={()=> {localStorage.setItem("category","accessory"); navigate("/manyproduct")}}
             className="accessories-div "
           >
             <label className="h-[8vh] flex items-center font-bold text-[15px] cursor-pointer ">

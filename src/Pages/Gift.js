@@ -12,8 +12,8 @@ function Gift() {
           src="https://www.gonoise.com/cdn/shop/files/Rectangle_2622_1ee9180a-aaab-4e48-a2a6-6fcb50626302.png?v=1692622097"
         ></img>
       </div>
-      <div className=" h-[100vh] w-[100%] bg-white">
-        <label>Gifts for a lasting impression</label>
+      <div className=" h-[100vh] flex items-center justify-center flex-col w-[100%] mt-14 bg-white">
+        <label className="text-[30px] text-[#7E5931]">Gifts for a lasting impression</label>
         <div className=" flex w-[100%]">
         <div>
           <img src="https://www.gonoise.com/cdn/shop/files/Frame_482528.png?v=1692354191"></img>

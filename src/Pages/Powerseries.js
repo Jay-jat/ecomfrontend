@@ -44,7 +44,7 @@ function Powerseries() {
             <label className="text-[20px] font-bold">Sort by</label>
             <i className="fa fa-angle-up" />
           </div>
-          <hr className="bg-gray-400" />
+          <hr className="bg-gray-400 mt-1" />
           {/* Sort Options */}
           <div
             className="flex gap-2 items-center text-[15px] cursor-pointer"
@@ -65,12 +65,8 @@ function Powerseries() {
             <label>Price, high to low</label>
           </div>
 
-          <hr className="bg-gray-400" />
-          <div className="flex justify-between py-2">
-            <label className="text-[19px] font-bold">Price</label>
-            <i className="fa fa-angle-down" />
-          </div>
-          <hr className="bg-gray-400" />
+          <hr className="bg-gray-400 mt-5" />
+          
         </div>
 
         {/* Products Section */}
